@@ -14,7 +14,7 @@ const Login = ({setError , setErrormsg , setSuccess , setLogin })=>
     setIstap(true);
     e.preventDefault();
     try{
-        const res = await fetch('/signin' , 
+        const res = await fetch('todoapi-ivory.vercel.app/signin' , 
         {
             method:"POST",
             headers: 
