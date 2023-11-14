@@ -8,7 +8,7 @@ route.use(cors());
 
 route.use(cors(
   {
-    origin: ["*"],
+    origin: ["https://todoapp-puce-alpha.vercel.app"],
     methods: ["POST", "GET"],
     credentials : true
   }
