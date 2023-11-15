@@ -16,7 +16,7 @@ const Login = ({setError , setErrormsg , setSuccess , setLogin })=>
     try{
         const res = await fetch("https://todoapi-ivory.vercel.app/signin" , 
         {
-            method:"GET",
+            method:"POST",
             headers: 
             {
                 "Content-Type" : "application/json"
