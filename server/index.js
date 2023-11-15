@@ -18,7 +18,6 @@ route.use(cors(
 const jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
-route.use(express.json());
 require("./Conn");
 route.use(cookieParser());
 const Authenticate = require('./middleware/authenticate');
@@ -171,7 +170,7 @@ route.post('/register' , async(req,res)=>
 
 //login request 
 
-route.get('/signin' , async(req,res)=>
+route.post('/signin' , async(req,res)=>
 {
   const {email, password} = req.body;
 
