@@ -3,6 +3,7 @@ const cors = require('cors');
 const route = express();
 //require("db/conn");
 route.use(cors());
+route.use(express.json());
 // route.use(cors({ origin: 'https://todo-app-red-six.vercel.app/' }));
 //route.use(cors({ origin: '*' }));
 
