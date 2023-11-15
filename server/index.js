@@ -171,7 +171,7 @@ route.post('/register' , async(req,res)=>
 
 //login request 
 
-route.post('/signin' , async(req,res)=>
+route.get('/signin' , async(req,res)=>
 {
   const {email, password} = req.body;
 
