@@ -2,15 +2,15 @@ const express = require("express");
 const cors = require('cors');
 const route = express();
 //require("db/conn");
-route.use(cors());
 route.use(express.json());
+
 // route.use(cors({ origin: 'https://todo-app-red-six.vercel.app/' }));
 //route.use(cors({ origin: '*' }));
 
 route.use(cors(
   {
-    origin: ["https://todoapp-puce-alpha.vercel.app"],
-    methods: ["POST", "GET"],
+    origin: "https://todoapp-puce-alpha.vercel.app",
+    methods: ["POST", "GET", "DELETE","PUT"],
     credentials : true
   }
 ));
