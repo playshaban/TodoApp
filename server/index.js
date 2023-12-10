@@ -194,7 +194,8 @@ route.post('/signin' , async(req,res)=>
       //console.log(token);
       res.cookie("jwtoken",token , {
         expires : new Date (Date.now()+ 680400000),
-        httpOnly :true
+        httpOnly :true,
+        sameSite: 'None', 
       })
       return res.status(200).json({message:"Login Successfull"});
     }
