@@ -15,7 +15,7 @@ const Signup =({setError , setErrormsg , setSuccess , setLogin})=>
         e.preventDefault();
         console.log(name + " " + email + " " + password );
         try{
-            const res = await fetch('/register' , 
+            const res = await fetch('https://todoapi-ivory.vercel.app/register' , 
             {
                 method:"POST",
                 headers: 
