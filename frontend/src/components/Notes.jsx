@@ -65,7 +65,7 @@ function Notes() {
 
     try 
     {
-      const res = await fetch('/signout',
+      const res = await fetch('https://todoapi-ivory.vercel.app/signout',
         {
           method: "GET",
           headers:
@@ -104,7 +104,7 @@ function Notes() {
   const getNotesCurr = async () => {
       console.log(urldate);
       try {
-        const response = await fetch(`/getdata/${urldate}/${userId}`);
+        const response = await fetch(`https://todoapi-ivory.vercel.app/getdata/${urldate}/${userId}`);
 
         if (response.status === 200) {
           const currdata = await response.json(); // Parse the response as JSON
@@ -125,7 +125,7 @@ function Notes() {
 
   const calluserAuth = async () => {
     try {
-      const res = await fetch(`/userauth/${urldate}`,
+      const res = await fetch(`https://todoapi-ivory.vercel.app/userauth/${urldate}`,
         {
           method: "GET",
           headers:
@@ -191,7 +191,7 @@ function Notes() {
   const addnote = async (e) => {
     e.preventDefault();
     try {
-      const sending = await fetch("/addnote", {
+      const sending = await fetch("https://todoapi-ivory.vercel.app/addnote", {
         method: 'POST',
         headers:
         {
@@ -222,7 +222,7 @@ function Notes() {
   //function for deleting a node 
   const handleDelete = async (id) => {
     try {
-      const reqDel = await fetch('/delete',
+      const reqDel = await fetch('https://todoapi-ivory.vercel.app/delete',
         {
           method: "POST",
           headers:
@@ -250,7 +250,7 @@ function Notes() {
   const handlecheck = async (id , userid) => {
     try {
       
-      const response = await fetch(`/check/${id}/${userid}`);
+      const response = await fetch(`https://todoapi-ivory.vercel.app/check/${id}/${userid}`);
 
       if (response.status === 200) {
 
