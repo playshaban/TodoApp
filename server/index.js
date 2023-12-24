@@ -9,7 +9,7 @@ route.use(express.json());
 
 route.use(
   cors({
-    origin: ["https://todoapp-puce-alpha.vercel.app","http://127.0.0.1:5500/index.html"],
+    origin: ["https://todoapp-puce-alpha.vercel.app","http://127.0.0.1:5500/index.html","https://playshaban.github.io/profile/"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   })
@@ -23,7 +23,7 @@ route.use(cookieParser());
 const Authenticate = require("./middleware/authenticate");
 const Note = require("./Schema/NoteShcema");
 const User = require("./Schema/userSchema");
-const Contact = require("./Schema/userSchema");
+const Contact = require("./Schema/contactSchema");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 
@@ -198,17 +198,21 @@ route.get("/signout", (req, res) => {
   return res.status(200).send({ message: "Sign Out" });
 });
 
-route.get("/contact", (req, res) => {
+
+
+//contact form 
+route.post("/contact", async(req, res) => {
   try {
     const { fname, lname, phone, email, message } = req.body;
 
     const newContact = new Contact({ fname, lname, phone, email, message });
-    const isSaved = newContact.save();
+    const isSaved = await newContact.save();
 
     if (!isSaved) {
       return res.status(401).json({ message: "Internal Server Error" });
     }
 
+    //console.log(newContact);
     return res.status(200).json({message:"Message Sent Successfully"});
 
   } catch (error) {
