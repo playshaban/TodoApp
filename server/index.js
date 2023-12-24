@@ -9,7 +9,7 @@ route.use(express.json());
 
 route.use(
   cors({
-    origin: ["https://todoapp-puce-alpha.vercel.app","http://127.0.0.1:5500/index.html","https://playshaban.github.io/profile/"],
+    origin: ["https://todoapp-puce-alpha.vercel.app","http://127.0.0.1:5500/index.html","https://playshaban.github.io"],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   })
